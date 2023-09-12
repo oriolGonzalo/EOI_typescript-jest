@@ -16,11 +16,39 @@ import { countChars } from "./adapters"
 
 export const removeExclamations = (sentence: string) => {
     const ocurrences = countChars('!', sentence);
-    if (ocurrences >= 50) {
+    let result = {}
+    if (ocurrences >= 50 && ocurrences < 100) {
         return {
             total: ocurrences,
             value: sentence,
             limit: 'It has passed first limit'
+        }
+    }
+    else if (ocurrences >= 100 && ocurrences < 150) {
+        return {
+            total: ocurrences,
+            value: sentence,
+            limit: 'It has passed second limit'
+        }
+    } else if (ocurrences >= 150 && ocurrences < 200)
+    {
+        return {
+            total: ocurrences,
+            value: sentence,
+            limit: 'It has passed third limit'
+        }
+    } else if (ocurrences >= 200 && ocurrences < 250)
+    {
+        return {
+            total: ocurrences,
+            value: sentence,
+            limit: 'It has passed forth limit'
+        }
+    } else if (ocurrences >= 250){
+        return {
+            total: ocurrences,
+            value: sentence,
+            limit: 'It has passed the last limit'
         }
     }
 }
